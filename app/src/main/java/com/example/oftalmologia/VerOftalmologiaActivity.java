@@ -7,13 +7,17 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-public class VerOftalmologiaActivity extends AppCompatActivity implements LocationListener {
+import com.squareup.picasso.Picasso;
+
+public class VerOftalmologiaActivity<lbNombre> extends AppCompatActivity implements LocationListener {
     Oftalmologia o;
     LocationManager locationManager;
     Location destino;
@@ -29,8 +33,8 @@ public class VerOftalmologiaActivity extends AppCompatActivity implements Locati
         int pos =getIntent().getIntExtra("pos", -1);
         o = Informacion.data.get(pos);
         destino=new Location(o.getNombre());
-        destino.getLatitude(o.getUbicacion().getLat());
-        destino.getLongitude(o.getUbicacion().getLon());
+        destino.setLatitude(o.getUbicacion().getLat());
+        destino.setLongitude(o.getUbicacion().getLon());
         llenar_cajas();
     }
 
@@ -46,7 +50,7 @@ public class VerOftalmologiaActivity extends AppCompatActivity implements Locati
             requestPermissions(perms,permsRequestCode);
         }
     }
-    @Override
+
     public void onRequestPermissionResult(int requestCode, String permission[], int[] grantResults) {
         switch (requestCode){
             case 100:
@@ -65,16 +69,36 @@ public class VerOftalmologiaActivity extends AppCompatActivity implements Locati
         }
     }
     private void llenar_cajas(){
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED {
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-    }
+        ImageView img = findViewById(R.id.foto);
+        TextView lbNombre = findViewById(R.id.lbNombre);
+        TextView lbDireccion = findViewById(R.id.lbDireccion);
+        TextView lbHorario = findViewById(R.id.lbHorario);
+        TextView lbUbicacion = findViewById(R.id.lbUbicacion);
 
+        if(lbNombre!=null) {
+            lbNombre.setText((o!=null)?o.getNombre():"");
+        }
+        if(lbDireccion!=null) {
+            lbDireccion.setText((o!=null)?o.getDireccion():"");
+        }
+        if(lbHorario!=null) {
+            lbHorario.setText((o!=null)?o.getHorario():"");
+        }
+        if(lbUbicacion!=null) {
+            lbUbicacion.setText((o!=null)?o.getUbicacion().toString():"");
+        }
+        Picasso.get().load(o.getFoto()).resize(500, 500).into(img);
+        return;
+    }
+    public void volver(View view){
+        finish();
+    }
     @Override
     public void onLocationChanged(@NonNull Location location) {
-
+        distancia(location, destino);
     }
-    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-    Location punto_actual = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-    distancia(punto_actual, destino);
 }
