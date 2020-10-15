@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "602820742420",
+    "firebase_url": "https://my-application-eee8c.firebaseio.com",
+    "project_id": "my-application-eee8c",
+    "storage_bucket": "my-application-eee8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602820742420:android:ecbea08f0e20f504184601",
+        "android_client_info": {
+          "package_name": "co.edu.sena.oftalmologia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602820742420-4j3us8h706aoo6j5aro9vegt7cl20d93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.sena.oftalmologia",
+            "certificate_hash": "97049c04b7117d98ca5c6aba5ce3e78d438063a9"
+          }
+        },
+        {
+          "client_id": "602820742420-t6gmdp52i46cn07a57d5qme6j75gs7j0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgNZix6vP7usPUDBq3gJY0AuaI77qbBEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602820742420-t6gmdp52i46cn07a57d5qme6j75gs7j0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602820742420:android:6c5978bfd6c05c43184601",
+        "android_client_info": {
+          "package_name": "co.edu.sena.santander.cidm.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602820742420-0j2kek81486hjof2v0r1qng65vktbgum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.sena.santander.cidm.myapplication",
+            "certificate_hash": "f4b11107a6fa21211892694009b4b5161c461e03"
+          }
+        },
+        {
+          "client_id": "602820742420-t6gmdp52i46cn07a57d5qme6j75gs7j0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgNZix6vP7usPUDBq3gJY0AuaI77qbBEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602820742420-t6gmdp52i46cn07a57d5qme6j75gs7j0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602820742420:android:3e0f78fd623dd657184601",
+        "android_client_info": {
+          "package_name": "com.example.oftalmologia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602820742420-j3c5mqev0vkkfav3thaj0b6us6m4cmkm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oftalmologia",
+            "certificate_hash": "97049c04b7117d98ca5c6aba5ce3e78d438063a9"
+          }
+        },
+        {
+          "client_id": "602820742420-t6gmdp52i46cn07a57d5qme6j75gs7j0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgNZix6vP7usPUDBq3gJY0AuaI77qbBEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602820742420-t6gmdp52i46cn07a57d5qme6j75gs7j0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

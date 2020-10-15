@@ -10,12 +10,12 @@
 
     <ImageView
         android:id="@+id/foto"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="82dp"
+        android:layout_height="362dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:cropToPadding="false"
-        android:src="@drawable/descarga" />
+        android:src="@drawable/abc_vector_test" />
 
     <LinearLayout
         android:layout_width="match_parent"

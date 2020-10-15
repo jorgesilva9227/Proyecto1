@@ -16,49 +16,23 @@
         android:id="@+id/lbNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#8BC34A"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbDireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#03A9F4"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbHorario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#03A9F4"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/lbUbicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#03A9F4"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/cita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:onClick="citas"
-        android:text="Agendar Cita" />
+        android:text="TextView" />
 </LinearLayout>
-
-
