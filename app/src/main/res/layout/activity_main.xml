@@ -8,11 +8,18 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/salir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="salir"
         android:text="Salir" />
+
+    <Button
+        android:id="@+id/listar_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="listar_all"
+        android:text="Listar todas la clinicas" />
 
     <ListView
             android:id="@+id/lista"

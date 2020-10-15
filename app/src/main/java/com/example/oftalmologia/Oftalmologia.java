@@ -1,11 +1,12 @@
 package com.example.oftalmologia;
 
-public class Oftalmologia {
+public class Oftalmologia implements Comparable {
     private String nombre;
     private String direccion;
     private Ubicacion ubicacion;
     private String horario;
     private String foto;
+    private double distancia;
 
     public Oftalmologia(String nombre, String direccion, Ubicacion ubicacion, String horario, String foto) {
         this.nombre=nombre;
@@ -13,6 +14,9 @@ public class Oftalmologia {
         this.ubicacion=ubicacion;
         this.horario=horario;
         this.foto=foto;
+    }
+
+    public Oftalmologia(String nombre, String direccion, String horario, Ubicacion ubicacion, String foto) {
     }
 
     public String getNombre() {
@@ -55,6 +59,18 @@ public class Oftalmologia {
         this.foto = foto;
     }
 
-    public void setDistancia(double dist) {
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
+
+    public double getDistancia() {
+        return distancia;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        double distancia = ((Oftalmologia) o).getDistancia();
+        double resultado = this.distancia-distancia;
+        return (int) resultado;
     }
 }
