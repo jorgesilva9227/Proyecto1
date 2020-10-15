@@ -1,4 +1,4 @@
-package com.example.oftalmologia;
+package co.edu.sena.oftalmologia;
 
 import android.Manifest;
 import android.content.Context;
@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.oftalmologia.R;
 import com.squareup.picasso.Picasso;
 
 public class VerOftalmologiaActivity<lbNombre> extends AppCompatActivity implements LocationListener {

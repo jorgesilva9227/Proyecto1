@@ -1,14 +1,16 @@
-package com.example.oftalmologia;
+package co.edu.sena.oftalmologia;
 
 public class Personas {
     private String nombre;
     private int cedula;
     private int telefono;
+    private String email;
 
-    public Personas(String nombre, int cedula, int telefono) {
+    public Personas(String nombre, int cedula, int telefono, String email) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.telefono = telefono;
+        this.email=email;
     }
 
     public String getNombre() {
@@ -33,5 +35,13 @@ public class Personas {
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

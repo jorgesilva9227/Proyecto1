@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.oftalmologia">
+    package="co.edu.sena.oftalmologia">
 
         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oftalmologia">
-        <activity android:name=".VerOftalmologiaActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="co.edu.sena.oftalmologia.VerOftalmologiaActivity"></activity>
+        <activity android:name="co.edu.sena.oftalmologia.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

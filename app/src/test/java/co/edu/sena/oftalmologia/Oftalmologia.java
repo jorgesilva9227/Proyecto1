@@ -1,4 +1,4 @@
-package com.example.oftalmologia;
+package co.edu.sena.oftalmologia;
 
 public class Oftalmologia implements Comparable {
     private String nombre;
@@ -16,8 +16,6 @@ public class Oftalmologia implements Comparable {
         this.foto=foto;
     }
 
-    public Oftalmologia(String nombre, String direccion, String horario, Ubicacion ubicacion, String foto) {
-    }
 
     public String getNombre() {
         return nombre;
@@ -72,5 +70,17 @@ public class Oftalmologia implements Comparable {
         double distancia = ((Oftalmologia) o).getDistancia();
         double resultado = this.distancia-distancia;
         return (int) resultado;
+    }
+
+    @Override
+    public String toString() {
+        return "Oftalmologia{" +
+                "nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", ubicacion=" + ubicacion +
+                ", horario='" + horario + '\'' +
+                ", foto='" + foto + '\'' +
+                ", distancia=" + distancia +
+                '}';
     }
 }

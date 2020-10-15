@@ -1,4 +1,4 @@
-package com.example.oftalmologia;
+package co.edu.sena.oftalmologia;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,17 +11,19 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.Manifest;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.android.volley.toolbox.StringRequest;
+import com.example.oftalmologia.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,7 +51,38 @@ public class MainActivity<locationManager> extends AppCompatActivity implements 
             }
         });
 
-        StringRequest request =new StringRequest(Request.Method.GET, "http://10.201.224.13/oftalmologias/index.php", new Response.Listener<String>() {
+        String url = "http://10.201.224.13/oftalmologias/index.php";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray arreglo = response.getJSONArray("oftalmologias");
+                    for (int i = 0; i < arreglo.length(); i++) {
+                        JSONObject value = arreglo.getJSONObject(i);
+                        JSONObject ub = value.getJSONObject("ubicacion");
+                        Ubicacion ubicacion = new Ubicacion(ub.getDouble("lat"), ub.getDouble("lon"));
+                        Oftalmologia o = new Oftalmologia(value.getString("nombre"), value.getString("direccion"), ubicacion, value.getString("horario"), value.getString("foto"));
+                        //Toast.makeText(MainActivity.this, o.toString(), Toast.LENGTH_SHORT).show();
+                        Informacion.data.add(o);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Informacion.datatemp = Informacion.data;
+                llenar_lista();
+                //Log.d("TAG", response.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("TAG", error.getMessage());
+            }
+        });
+
+        /*StringRequest request =new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Informacion.data.clear();
@@ -74,7 +107,7 @@ public class MainActivity<locationManager> extends AppCompatActivity implements 
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
         Volley.newRequestQueue(MainActivity.this).add(request);
     }
 

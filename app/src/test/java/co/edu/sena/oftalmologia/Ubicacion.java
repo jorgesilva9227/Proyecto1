@@ -1,4 +1,4 @@
-package com.example.oftalmologia;
+package co.edu.sena.oftalmologia;
 
 public class Ubicacion {
     private double lat;
